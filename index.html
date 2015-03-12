@@ -1,203 +1,273 @@
 <!DOCTYPE HTML>
 <html lang="en" ng-app>
-<head>
-	<title>{{ user.name }} | Visiting Card</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-  <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-  <link href="style.css" rel="stylesheet">
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-  <script>
-  	$(function() {
-    $( "#accordion" ).accordion({
-      collapsible: true
-    });
-    $( "#accordion1" ).accordion({
-      collapsible: true
-    });
-  });
-  </script>
-</head>
+  <head>
+    <title>{{ user.name }} | Visiting Card</title>
+    <meta charset="utf-8">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
 
-<body ng-init="
-user.name= 'Tanay Pant'; 
-user.designation= 'White Hat'; 
-user.email= 'tanay1337@gmail.com'; 
-user.link1= 'www.cyberwizards.org'; 
-user.tusername='tanay1337'; 
-user.companylogo= 'http://i.imgur.com/JObOXRt.png'; 
-user.color1= '#c0c0c0'; 
-user.color2= 'white'; 
-user.textcolor1= '#287cc2'; 
-user.textcolor2= '#666';
-user.fusername='...'; 
-user.gusername='+TanayPant1337'; " >
+  <body ng-init="
+  user.name= 'Tanay Pant';
+  user.designation= 'White Hat';
+  user.email= 'tanay1337@gmail.com';
+  user.link1= 'www.cyberwizards.org';
+  user.tusername='tanay1337';
+  user.companylogo= 'http://i.imgur.com/JObOXRt.png';
+  user.color1= '#c0c0c0';
+  user.color2= 'white';
+  user.textcolor1= '#287cc2';
+  user.textcolor2= '#666';
+  user.fusername='...';
+  user.gusername='+TanayPant1337'; " >
 
-	<nav id="header" class="navbar navbar-default" role="navigation">
-    <div id="header_left" class="navbar-brand" title="Angular Card Generator">
-	<label for="Angular Card Generator">
-      <span class="ACG">
-        <strong>
-          ACG
-        </strong>
-      </span>
-      Angular Card Generator
-	</label>
-    </div>	
-  </nav>
+    <nav id="header" class="navbar navbar-default" role="navigation">
+      <div id="header_left" class="navbar-brand" title="Angular Card Generator">
+        ACG Angular Card Generator
+      </div>
+    </nav>
 
-<div class="nav navbar-nav navbar-left" role="navigation">
-                <div id="accordion" class="sidebar-collapse side-menu">
-                            <h5><a href="#"><i class="fa fa-user fa-fw"></i> Full Name</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                Full Name: <input type="text" ng-model="user.name" placeholder="Full Name" /><br>          
-                              </p>
-                            </div>                            
+    <div class="wrapper">
+      <div class="panel-group" id="accordion1">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                <i class="fa fa-user fa-fw"></i>Full Name
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              Full Name: <input type="text" ng-model="user.name" placeholder="Full Name" />
+            </div>
+          </div>
+        </div>
 
-                            <h5><a href="#"><i class="fa fa-star fa-fw"></i> Designation</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                Designation: <input type="text" ng-model="user.designation" placeholder="Designation" /><br>
-                              </p>
-                            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                <i class="fa fa-star fa-fw"></i>Occupation
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              Occupation: <input type="text" ng-model="user.designation" placeholder="Occupation" />
+            </div>
+          </div>
+        </div>
 
-                            <h5><a href="#"><i class="fa fa-comment fa-fw"></i> Email-Id</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                Email-ID: <input type="text" ng-model="user.email" placeholder="Email-ID" /><br>
-                              </p>
-                            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                <i class="fa fa-comment fa-fw"></i>Email</a>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              Email: <input type="text" ng-model="user.email" placeholder="Email-ID" />
+            </div>
+          </div>
+        </div>
 
-                            <h5><a href="#"><i class="fa fa-hand-o-right fa-fw"></i> Personal Link-1</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                http://<input type="text" ng-model="user.link1" placeholder="Personal Link-1" /><br>
-                              </p>
-                            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                <i class="fa fa-hand-o-right fa-fw"></i>Personal Link 1
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+              http://<input type="text" ng-model="user.link1" placeholder="Personal Link-1" />
+            </div>
+          </div>
+        </div>
 
-                            <h5><a href="#"><i class="fa fa-hand-o-right fa-fw"></i> Personal Link-2</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                http://<input type="text" ng-model="user.link2" placeholder="Personal Link-2" /><br>
-                              </p>
-                            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                <i class="fa fa-hand-o-right fa-fw"></i>Personal Link 2
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+              http://<input type="text" ng-model="user.link2" placeholder="Personal Link-2" />
+            </div>
+          </div>
+        </div>
 
-                            <h5><a href="#"><i class="fa fa-picture-o fa-fw"></i> Company Logo</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                Company Logo: <input type="text" ng-model="user.companylogo" placeholder="Company Logo URL" /><br>
-                              </p>
-                            </div> 
-                  </div>
-                </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                <i class="fa fa-picture-o fa-fw"></i>Company Logo
+              </a>
+            </h4>
+          </div>
+          <div id="collapseSix" class="panel-collapse collapse">
+            <div class="panel-body">
+              http://<input type="text" ng-model="user.companylogo" placeholder="Company Logo URL" />
+            </div>
+          </div>
+        </div>
+      </div>
 
-                <div class="nav navbar-nav navbar-right" role="navigation">
-                <div id="accordion1" class="sidebar-collapse side-menu">
+      <div class="card" style="background: -webkit-linear-gradient(top, {{ user.color1 }} , {{ user.color2 }});
+                               background: -o-linear-gradient(top,{{ user.color1 }}, {{ user.color2 }});
+                               background: -moz-linear-gradient(top,{{ user.color1 }}, {{ user.color2 }});
+                               background: linear-gradient(top,{{ user.color1 }}, {{ user.color2 }});
+                               color:{{ user.textcolor1 }};">
 
-                            <h5><a href="#"><i class="fa fa-qrcode fa-fw"></i> Card Gradient Color</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                Card Color1: <input type="color" ng-model="user.color1" placeholder="Card Color1" /><br>
-                              </p>
-              <p class="sidebar-p">
-                                Card Color2: <input type="color" ng-model="user.color2" placeholder="Card Color2" /><br>
-                              </p>
-                            </div> 
 
-                            <h5><a href="#"><i class="fa fa-angle-right fa-fw"></i> Text Color-1</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                Text-Color 1: <input type="color" ng-model="user.textcolor1" placeholder="Text-Color 1" /><br>
-                              </p>
-                            </div> 
+        <img ng-src="{{ user.companylogo }}" class="logo">
 
-                            <h5><a href="#"><i class="fa fa-angle-right fa-fw"></i> Text Color-2</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                Text-Color 2: <input type="color" ng-model="user.textcolor2" placeholder="Text-Color 2" /><br>
-                              </p>
-                            </div> 
+        <div class="details">
+          <h1>{{ user.name }}</h1>
+          <h2 style=" color:{{ user.textcolor2 }};">{{ user.designation }}</h2>
 
-                            <h5><a href="#"><i class="fa fa-twitter fa-fw"></i> Twitter</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                twitter.com/<input type="text" ng-model="user.tusername" placeholder="Twitter Username" /><br>
-                              </p>
-                            </div> 
+          <hr>
 
-                            <h5><a href="#"><i class="fa fa-facebook fa-fw"></i> Facebook</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                facebook.com/<input type="text" ng-model="user.fusername" placeholder="Facebook Profile" /><br>
-                              </p>
-                            </div> 
+          <p style="color:{{ user.textcolor2 }};">
+            <a ng-href="mailto:{{ user.email }}">{{ user.email }}</a>
+          </p>
 
-                            <h5><a href="#"><i class="fa fa-google-plus fa-fw"></i> Google+</a></h5>
-                            <div class="inputfield">
-                              <p class="sidebar-p">
-                                google.com/<input type="text" ng-model="user.gusername" placeholder="Google+ Profile" /><br>
-                              </p>
-                            </div> 
-                  </div>
-                </div>
-	<center>
-	<div class="card" style="	background: -webkit-linear-gradient(top, {{ user.color1 }} , {{ user.color2 }}); 
-	background: -o-linear-gradient(top,{{ user.color1 }}, {{ user.color2 }});
-	background: -moz-linear-gradient(top,{{ user.color1 }}, {{ user.color2 }}); 
-	background: linear-gradient(top,{{ user.color1 }}, {{ user.color2 }});
-	color:{{ user.textcolor1 }};">
-        <br>
-        <table>
-        	<tr>
-          		<td align="center">
-      					<img ng-src="{{ user.companylogo }}" class="logo">
-      				<br>
-          		</td>
-          
-          		<td class="name">
-              		{{ user.name }}
-                <br>
-      
-              <span class="designation" align="right" style="	color:{{ user.textcolor2 }};">{{ user.designation }}</span><br><br>
-                    <table class="table">
-                    
-              <tr>
-                <td class="content-td" style="	color:{{ user.textcolor2 }};">
-                  <span class="email" style="	color:{{ user.textcolor2 }};"><a ng-href="mailto:{{ user.email }}">{{ user.email }}</a></span><br>
-          <span class="link1" style="	color:{{ user.textcolor2 }};"><a ng-href="http://{{ user.link1 }}" target="_blank">{{ user.link1 }}</a></span><br>
-          <span class="link2" style="	color:{{ user.textcolor2 }};"><a ng-href="http://{{ user.link2 }}" target="_blank">{{ user.link2 }}</a></span><br><br>
-          
-                  
-    <span class="twitter" style="	color:{{ user.textcolor1 }};"><a ng-href="https://www.twitter.com/{{ user.tusername }}" class="text-inner" target="_blank" title="@{{ user.tusername }}">&#160<i class="fa fa-twitter fa-fw"></i>&#160</a><span ng-show="!user.fusername && !user.gusername"><font size="3px">@ {{ user.tusername }}</font></span></span>
-        
-    <span class="facebook" style="	color:{{ user.textcolor1 }};" ng-if="user.fusername"><a ng-href="https://www.facebook.com/{{ user.fusername }}" class="text-inner" target="_blank" title="{{ user.name }} on facebook" >&#160<i class="fa fa-facebook fa-fw"></i>&#160</a></span>
-  
-        <span class="gplus" style="	color:{{ user.textcolor1 }};" ng-if="user.gusername"><a ng-href="https://www.google.com/{{ user.gusername }}" class="text-inner" target="_blank" title="{{ user.name }} on google+">&#160<i class="fa fa-google-plus fa-fw"></i>&#160</a></span><br>
-              			<br><br><br>
-           
-                </td>
-              </tr>
-            </table>
-           </td>
-        </tr>
-      </table>
+          <p style="color:{{ user.textcolor2 }};">
+            <a ng-href="http://{{ user.link1 }}" target="_blank">{{ user.link1 }}</a>
+          </p>
 
+          <p style="color:{{ user.textcolor2 }};">
+            <a ng-href="http://{{ user.link2 }}" target="_blank">{{ user.link2 }}</a>
+          </p>
+
+          <div class="social">
+            <span class="twitter" style="color:{{ user.textcolor1 }};">
+              <a ng-href="https://www.twitter.com/{{ user.tusername }}" class="text-inner" target="_blank" title="@{{ user.tusername }}">
+                <i class="fa fa-twitter fa-fw"></i>
+              </a>
+              <span class="twitter-handle" ng-show="!user.fusername && !user.gusername">
+                @{{user.tusername}}
+              </span>
+            </span>
+
+            <span class="facebook" style="color:{{ user.textcolor1 }};" ng-if="user.fusername">
+              <a ng-href="https://www.facebook.com/{{ user.fusername }}" class="text-inner" target="_blank" title="{{ user.name }} on facebook" >
+                <i class="fa fa-facebook fa-fw"></i>
+              </a>
+            </span>
+            <span class="gplus" style=" color:{{ user.textcolor1 }};" ng-if="user.gusername">
+              <a ng-href="https://www.google.com/{{ user.gusername }}" class="text-inner" target="_blank" title="{{ user.name }} on google+">
+                <i class="fa fa-google-plus fa-fw"></i>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-group" id="accordion2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+                <i class="fa fa-qrcode fa-fw"></i>Card Gradient Color
+              </a>
+            </h4>
+          </div>
+          <div id="collapseSeven" class="panel-collapse collapse in">
+            <div class="panel-body">
+              From: <input type="color" ng-model="user.color1" placeholder="Card Color1" />&nbsp;
+              To: <input type="color" ng-model="user.color2" placeholder="Card Color2" />
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+                <i class="fa fa-angle-right fa-fw"></i>Text Color 1
+              </a>
+            </h4>
+          </div>
+          <div id="collapseEight" class="panel-collapse collapse">
+            <div class="panel-body">
+              Text-Color 1: <input type="color" ng-model="user.textcolor1" placeholder="Text-Color 1" />
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+                <i class="fa fa-angle-right fa-fw"></i>Text Color 2
+              </a>
+            </h4>
+          </div>
+          <div id="collapseNine" class="panel-collapse collapse">
+            <div class="panel-body">
+              Text-Color 2: <input type="color" ng-model="user.textcolor2" placeholder="Text-Color 2" />
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+                <i class="fa fa-twitter fa-fw"></i>Twitter
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTen" class="panel-collapse collapse">
+            <div class="panel-body">
+              twitter.com/<input type="text" ng-model="user.tusername" placeholder="Twitter Username" />
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
+                <i class="fa fa-facebook fa-fw"></i>Facebook
+              </a>
+            </h4>
+          </div>
+          <div id="collapseEleven" class="panel-collapse collapse">
+            <div class="panel-body">
+              facebook.com/<input type="text" ng-model="user.fusername" placeholder="Facebook Profile" />
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">
+                <i class="fa fa-google-plus fa-fw"></i>Google+
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwelve" class="panel-collapse collapse">
+            <div class="panel-body">
+              google.com/<input type="text" ng-model="user.gusername" placeholder="Google+ Profile" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-    </center>
-
-  <div id="footer">
-    <div id="footer_left">
-      <font size="2px">
-        Copyright &copy; 2015 Tanay Pant. All rights reserved.
-      </font>
     </div>
-  </div>
-  <script src="bower_components/angular/angular.js"></script>
-</body>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+  </body>
 </html>

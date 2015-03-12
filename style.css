@@ -1,106 +1,81 @@
 body {
-    background: url(images/bg-sky.png);
-    background-repeat: repeat !important;
-    background-attachment: fixed;
+  background: url(images/bg-sky.png);
+  background-repeat: repeat !important;
+  background-attachment: fixed;
 }
 
-.sidebar-p {
-	background-color: #f5f8fa; 
-	border-radius: 6px;
-	font-family:Arial, Helvetica, sans-serif; 
-	color:#3E3E3E; 
-	font-size:12px; 
-	font-style:normal; 
-}
-	
-.ACG {
-	font-size:20px;
+.navbar{
+	margin-bottom: 55px;
 }
 
-.inputfield {
-	display: none;
+.wrapper {
+  display: table; margin: 0 auto;
+}
+
+.panel-group{
+	width: 275px;
+	float: left;
+}
+
+.panel-title a{
+	display: block;
+}
+
+i{
+	margin-right:5px;
 }
 
 .card {
+	float: left;
 	border: 1px solid #287cc2;
 	font-weight:lighter;
-	width: 480px; 
-	margin-top:60px;
+	width: 480px;
+	margin: 0 75px;
 	box-shadow: 0px 0px 10px rgb(17, 17, 17);
 }
 
-.name {
-	line-height:0.85;
-	padding-right:20px;
-	font-size:19px
+.card img{
+	float: left;
+	padding: 30px 0;
 }
 
-.designation {
-	font-size:16px;
+.card h1{
+	font-size: 30px;
+	margin: 15px 0 0 0;
 }
 
-.table {
-	table-layout: fixed;
+.card h2{
+	font-size: 22px;
+	margin: 10px 0 0 0;
 }
 
-.content-td {
-	font-size:16px;
-	line-height:1;
-	padding-right:0px;
+.card p{
+	font-size: 15px;
+	margin: 5px 0 0 0;
 }
 
-.email {
-	font-size:14px;
-	line-height:1;
+.details{
+	width: 95%;
 }
 
-.link1 {
-	font-size:14px;
-	line-height:1;
-}
-
-.link2 {
-	font-size:14px;
-	line-height:1;
-}
-
-.twitter {
+.social{
+	margin: 15px 0 0 0;
 	font-size:20px;
 }
 
-.text-inner {
-	text-decoration:none;
+.twitter-handle{
+	font-size: 15px;
+	margin-top: -5px;
 }
 
-.facebook {
+@media (max-width: 1200px) {
+  #accordion2{
+		float: none;
+		clear: both;
+		margin-left: 0px;
+	}
 
-	font-size:20px;
-}
-
-.gplus {
-	color:{{ user.textcolor1 }};
-	font-size:20px;
-}
-
-.logo {
-	max-width: 200px; 
-	max-height: 200px;
-}
-
-#footer {
-	opacity: 0.8; 
-	position:absolute; 
-	left:0px; 
-	bottom:0px; 
-	height:20px; 
-	width:100%; 
-	background-color: #ffffff;
-}
-
-#footer_left {
-	color: #000000;
-	float: center;
-	width: 70%; 
-	margin-left: 3%; 
-	font-family: 'Arimo', sans-serif;
+	.card{
+		margin: 0 0 0 50px;
+	}
 }
