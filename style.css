@@ -1,4 +1,4 @@
-body {
+body{
   background: url(images/bg-sky.png);
   background-repeat: repeat !important;
   background-attachment: fixed;
@@ -8,12 +8,12 @@ body {
   margin-bottom: 55px;
 }
 
-.wrapper {
+.wrapper{
   display: table; margin: 0 auto;
 }
 
 .panel-group{
-  width: 275px;
+  width: 300px;
   float: left;
 }
 
@@ -25,7 +25,7 @@ i{
   margin-right:5px;
 }
 
-.card {
+.card{
   float: left;
   border: 1px solid #287cc2;
   font-weight:lighter;
@@ -72,7 +72,7 @@ i{
   margin-top: -5px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px){
   #accordion2{
     float: none;
     clear: both;
