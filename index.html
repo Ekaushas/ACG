@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" ng-controller="BusinessCardController">
   <head>
-    <title>{{ user.name }} | Visiting Card</title>
+    <title>{{ user.name }} | Business Card</title>
     <meta charset="utf-8">
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
-  <body ng-controller="BusinessCardController">
+  <body>
     <nav id="header" class="navbar navbar-default" role="navigation">
       <div id="header_left" class="navbar-brand" title="Angular Card Generator">
         ACG Angular Card Generator
@@ -20,7 +20,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
                 <i class="fa fa-user fa-fw"></i>Full Name
               </a>
             </h4>
@@ -35,14 +35,14 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
                 <i class="fa fa-star fa-fw"></i>Occupation
               </a>
             </h4>
           </div>
           <div id="collapseTwo" class="panel-collapse collapse">
             <div class="panel-body">
-              Occupation: <input type="text" ng-model="user.designation" placeholder="Occupation" />
+              Occupation: <input type="text" ng-model="user.occupation" placeholder="Occupation" />
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
                 <i class="fa fa-comment fa-fw"></i>Email</a>
               </a>
             </h4>
@@ -65,7 +65,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">
                 <i class="fa fa-hand-o-right fa-fw"></i>Personal Link 1
               </a>
             </h4>
@@ -80,7 +80,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">
                 <i class="fa fa-hand-o-right fa-fw"></i>Personal Link 2
               </a>
             </h4>
@@ -95,7 +95,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+              <a data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">
                 <i class="fa fa-picture-o fa-fw"></i>Company Logo
               </a>
             </h4>
@@ -114,12 +114,11 @@
                                background: linear-gradient(top,{{ user.color1 }}, {{ user.color2 }});
                                color:{{ user.textcolor1 }};">
 
-
         <img ng-src="{{ user.companylogo }}" class="logo">
 
         <div class="details">
           <h1>{{ user.name }}</h1>
-          <h2 style=" color:{{ user.textcolor2 }};">{{ user.designation }}</h2>
+          <h2 style="color:{{ user.textcolor2 }};">{{ user.occupation }}</h2>
 
           <hr>
 
@@ -128,16 +127,16 @@
           </p>
 
           <p style="color:{{ user.textcolor2 }};">
-            <a ng-href="http://{{ user.link1 }}" target="_blank">{{ user.link1 }}</a>
+            <a ng-href="http://{{ user.link1 }}">{{ user.link1 }}</a>
           </p>
 
           <p style="color:{{ user.textcolor2 }};">
-            <a ng-href="http://{{ user.link2 }}" target="_blank">{{ user.link2 }}</a>
+            <a ng-href="http://{{ user.link2 }}">{{ user.link2 }}</a>
           </p>
 
           <div class="social">
             <span class="twitter" style="color:{{ user.textcolor1 }};">
-              <a ng-href="https://www.twitter.com/{{ user.tusername }}" class="text-inner" target="_blank" title="@{{ user.tusername }}">
+              <a ng-href="https://www.twitter.com/{{ user.tusername }}" title="@{{ user.tusername }}">
                 <i class="fa fa-twitter fa-fw"></i>
               </a>
               <span class="twitter-handle" ng-show="!user.fusername && !user.gusername">
@@ -146,12 +145,12 @@
             </span>
 
             <span class="facebook" style="color:{{ user.textcolor1 }};" ng-if="user.fusername">
-              <a ng-href="https://www.facebook.com/{{ user.fusername }}" class="text-inner" target="_blank" title="{{ user.name }} on facebook" >
+              <a ng-href="https://www.facebook.com/{{ user.fusername }}" title="{{ user.name }} on Facebook" >
                 <i class="fa fa-facebook fa-fw"></i>
               </a>
             </span>
-            <span class="gplus" style=" color:{{ user.textcolor1 }};" ng-if="user.gusername">
-              <a ng-href="https://www.google.com/{{ user.gusername }}" class="text-inner" target="_blank" title="{{ user.name }} on google+">
+            <span class="gplus" style="color:{{ user.textcolor1 }};" ng-if="user.gusername">
+              <a ng-href="https://www.google.com/{{ user.gusername }}" title="{{ user.name }} on Google+">
                 <i class="fa fa-google-plus fa-fw"></i>
               </a>
             </span>
@@ -163,7 +162,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">
                 <i class="fa fa-qrcode fa-fw"></i>Card Gradient Color
               </a>
             </h4>
@@ -179,7 +178,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">
                 <i class="fa fa-angle-right fa-fw"></i>Text Color 1
               </a>
             </h4>
@@ -194,7 +193,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseNine">
                 <i class="fa fa-angle-right fa-fw"></i>Text Color 2
               </a>
             </h4>
@@ -209,7 +208,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTen">
                 <i class="fa fa-twitter fa-fw"></i>Twitter
               </a>
             </h4>
@@ -224,7 +223,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseEleven">
                 <i class="fa fa-facebook fa-fw"></i>Facebook
               </a>
             </h4>
@@ -239,7 +238,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelve">
                 <i class="fa fa-google-plus fa-fw"></i>Google+
               </a>
             </h4>
@@ -252,7 +251,6 @@
         </div>
       </div>
     </div>
-    </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -263,7 +261,7 @@
       .controller('BusinessCardController', function($scope){
         $scope.user = {
           name: 'Tanay Pant',
-          designation: 'White Hat',
+          occupation: 'White Hat',
           email: 'tanay1337@gmail.com',
           link1: 'www.cyberwizards.org',
           tusername:'tanay1337',
