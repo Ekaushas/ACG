@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myApp">
   <head>
     <title>{{ user.name }} | Visiting Card</title>
     <meta charset="utf-8">
@@ -8,20 +8,7 @@
     <link href="style.css" rel="stylesheet">
   </head>
 
-  <body ng-init="
-  user.name= 'Tanay Pant';
-  user.designation= 'White Hat';
-  user.email= 'tanay1337@gmail.com';
-  user.link1= 'www.cyberwizards.org';
-  user.tusername='tanay1337';
-  user.companylogo= 'http://i.imgur.com/JObOXRt.png';
-  user.color1= '#c0c0c0';
-  user.color2= 'white';
-  user.textcolor1= '#287cc2';
-  user.textcolor2= '#666';
-  user.fusername='...';
-  user.gusername='+TanayPant1337'; " >
-
+  <body ng-controller="BusinessCardController">
     <nav id="header" class="navbar navbar-default" role="navigation">
       <div id="header_left" class="navbar-brand" title="Angular Card Generator">
         ACG Angular Card Generator
@@ -268,6 +255,27 @@
     </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+      'use strict';
+
+      angular.module('myApp', [])
+      .controller('BusinessCardController', function($scope){
+        $scope.user = {
+          name: 'Tanay Pant',
+          designation: 'White Hat',
+          email: 'tanay1337@gmail.com',
+          link1: 'www.cyberwizards.org',
+          tusername:'tanay1337',
+          companylogo: 'http://i.imgur.com/JObOXRt.png',
+          color1: '#c0c0c0',
+          color2: 'white',
+          textcolor1: '#287cc2',
+          textcolor2: '#666',
+          fusername:'...',
+          gusername:'+TanayPant1337'
+        }
+      });
+    </script>
   </body>
 </html>
